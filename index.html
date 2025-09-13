@@ -8,37 +8,33 @@
 <body>
   <!-- Header -->
   <header>
-    <h1>🎬 Movie Explorer</h1>
-    <p>Search movies, explore details, and save your favorites!</p>
+    <h1>🎬 Movie Search App</h1>
+    <input type="text" id="searchInput" placeholder="Search movies...">
+    <button id="searchBtn">Search</button>
+    <button id="favoritesBtn">⭐ Favorites</button>
+    <button id="themeToggle">🌙 Dark Mode</button>
+    <select id="sortSelect">
+      <option value="">Sort By</option>
+      <option value="yearAsc">Year ↑</option>
+      <option value="yearDesc">Year ↓</option>
+      <option value="titleAsc">Title A–Z</option>
+      <option value="titleDesc">Title Z–A</option>
+    </select>
   </header>
-
-  <!-- Search Section -->
-  <section id="search-section">
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Enter movie name...">
-      <button id="searchBtn">Search</button>
-    </div>
-  </section>
 
   <!-- Main Content -->
   <main>
-    <!-- Search Results -->
-    <section id="results-section">
-      <h2>Search Results</h2>
-      <div id="movie-list" class="movie-list"></div>
-    </section>
+    <div id="movieList"></div>
+    <div id="pagination"></div>
 
-    <!-- Favorites/Watchlist -->
-    <aside id="favorites-section">
-      <h2>⭐ Favorites</h2>
-      <div id="favorites-list" class="favorites-list">
-        <p>No favorites added yet.</p>
-      </div>
-    </aside>
+    <div id="favoritesSection" class="hidden">
+      <h2>⭐ My Watchlist</h2>
+      <div id="favoritesList"></div>
+    </div>
   </main>
 
   <!-- Modal for Movie Details -->
-  <div id="movieModal" class="modal">
+  <div id="movieModal" class="modal hidden">
     <div class="modal-content">
       <span id="closeModal">&times;</span>
       <div id="modalDetails"></div>
